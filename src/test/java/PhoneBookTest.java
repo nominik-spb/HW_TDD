@@ -6,7 +6,7 @@ public class PhoneBookTest {
     @Test
     public void testAdd() {
         PhoneBook phoneBook = new PhoneBook();
-        int result = phoneBook.add("Иван Иванов", "8-999-123-45-67");
+        int result = phoneBook.add("8-999-123-45-67", "Иван Иванов");
         assertTrue("Метод add должен возвращать количество номеров", result > 0);
     }
 }
