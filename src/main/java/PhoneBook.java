@@ -1,4 +1,7 @@
+import jdk.internal.access.JavaSecurityAccess;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class PhoneBook {
 
@@ -15,7 +18,10 @@ public class PhoneBook {
     }
 
     public String findByName(String name) {
-
-        return null;
+        for (Map.Entry<String, String> entry : phoneList.entrySet()) {
+            JavaSecurityAccess.ProtectionDomainCache reversedMap = null;
+            reversedMap.put(entry.getValue(), entry.getKey());
+        }
+        return phoneList.containsValue(name);
     }
 }
