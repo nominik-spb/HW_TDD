@@ -23,4 +23,9 @@ public class PhoneBook {
 
         return nameList.get(name);
     }
+
+    public String printAllNames() {
+
+        return null;
+    }
 }

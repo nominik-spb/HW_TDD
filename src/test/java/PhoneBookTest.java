@@ -31,4 +31,15 @@ public class PhoneBookTest {
         String result = phoneBook.findByName("Иван Сидоров");
         assertEquals("8-999-123-45-66", result);
     }
+
+    @Test
+    public void printAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("8-999-123-45-11", "Иван Иванов");
+        phoneBook.add("8-999-123-45-00", "Иван Петров");
+        phoneBook.add("8-999-123-45-66", "Иван Сидоров");
+
+        String result = phoneBook.printAllNames();
+        assertTrue("Метод printAllNames не должен быть null", result != null);
+    }
 }
