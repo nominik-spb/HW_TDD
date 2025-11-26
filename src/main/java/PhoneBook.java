@@ -5,23 +5,22 @@ import java.util.Map;
 
 public class PhoneBook {
 
-    HashMap<String, String> phoneList = new HashMap<>();
+    HashMap<String, String> numberList = new HashMap<>();
+    HashMap<String, String> nameList = new HashMap<>();
 
     public int add(String number, String name) {
-        phoneList.put(number,name);
-        return phoneList.size();
+        numberList.put(number,name);
+        nameList.put(name,number);
+        return numberList.size();
     }
 
     public String findByNumber(String number) {
 
-        return phoneList.get(number);
+        return numberList.get(number);
     }
 
     public String findByName(String name) {
-        for (Map.Entry<String, String> entry : phoneList.entrySet()) {
-            JavaSecurityAccess.ProtectionDomainCache reversedMap = null;
-            reversedMap.put(entry.getValue(), entry.getKey());
-        }
-        return phoneList.containsValue(name);
+
+        return nameList.get(name);
     }
 }
